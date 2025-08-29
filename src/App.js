@@ -106,35 +106,75 @@ const foodData = [
   }
 ];
 
+// Simple fuzzy matching function
+const fuzzyMatch = (query, list) => {
+  if (!query) return [];
+  const normalizedQuery = query.toLowerCase().replace(/\s/g, '');
+  const matches = list.filter(item => {
+    const normalizedName = item.name.toLowerCase().replace(/\s/g, '');
+    let i = 0;
+    let j = 0;
+    while (i < normalizedQuery.length && j < normalizedName.length) {
+      if (normalizedQuery[i] === normalizedName[j]) {
+        i++;
+      }
+      j++;
+    }
+    return i === normalizedQuery.length;
+  });
+  return matches.map(match => match.name).slice(0, 5);
+};
+
 const App = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [isWineSearch, setIsWineSearch] = useState(true);
+  const [suggestions, setSuggestions] = useState([]);
+
+  const handleInputChange = (event) => {
+    const input = event.target.value;
+    setQuery(input);
+    setResults([]);
+    
+    if (isWineSearch) {
+      setSuggestions(fuzzyMatch(input, wineData));
+    } else {
+      setSuggestions(fuzzyMatch(input, foodData));
+    }
+  };
 
   const handleSearch = () => {
     let matches = [];
+    let exactMatchFound = false;
+    
     if (isWineSearch) {
       const wineMatch = wineData.find(wine => wine.name.toLowerCase() === query.toLowerCase());
       if (wineMatch) {
         matches = wineMatch.pairings.slice(0, 5);
+        exactMatchFound = true;
       }
     } else {
       const foodMatch = foodData.find(food => food.name.toLowerCase() === query.toLowerCase());
       if (foodMatch) {
         matches = foodMatch.pairings.slice(0, 5);
+        exactMatchFound = true;
       }
     }
+    
     setResults(matches);
+    setSuggestions([]);
   };
 
-  const handleInputChange = (event) => {
-    setQuery(event.target.value);
-    setResults([]);
+  const selectSuggestion = (suggestion) => {
+    setQuery(suggestion);
+    setSuggestions([]);
+    handleSearch();
   };
 
   const clearResults = () => {
     setQuery("");
     setResults([]);
+    setSuggestions([]);
   };
 
   return (
@@ -179,7 +219,7 @@ const App = () => {
           </button>
         </div>
 
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
+        <div className="relative flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
           <input
             type="text"
             value={query}
@@ -197,6 +237,21 @@ const App = () => {
           >
             Search
           </button>
+          {suggestions.length > 0 && (
+            <div className="absolute top-full left-0 right-0 z-10 bg-white border border-[#4B1E37] rounded-lg shadow-lg mt-1 max-h-60 overflow-y-auto">
+              <ul className="divide-y divide-gray-200">
+                {suggestions.map((s, index) => (
+                  <li
+                    key={index}
+                    onClick={() => selectSuggestion(s)}
+                    className="p-4 text-lg cursor-pointer hover:bg-gray-100 transition-colors"
+                  >
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {results.length > 0 && (
@@ -222,7 +277,7 @@ const App = () => {
           </div>
         )}
 
-        {results.length === 0 && query && (
+        {results.length === 0 && query && suggestions.length === 0 && (
           <div className="mt-8 p-6 text-center text-[#7C556F] border-2 border-dashed border-gray-300 rounded-lg">
             No pairings found for "{query}". Please check your spelling or try a different search.
           </div>
