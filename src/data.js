@@ -170,7 +170,7 @@ const foodData = [
     name: "Quiche",
     profile: "Savory, creamy, rich, eggy",
     pairings: [
-      { wine: "Pinot Grigio", reason: "The wine's high acidity cuts through the richness and creamy texture of the quiche filling, refreshing the palate." },
+      { wine: "Pinot Grigio", reason: "The wine's high acidity cuts through the richness and creamy texture of the quiche filling." },
       { wine: "Sauvignon Blanc", reason: "Its zesty acidity is a classic counterpoint to the richness of eggs and cream." },
       { wine: "Chardonnay", reason: "A lightly oaked Chardonnay can match the creamy texture of the quiche, with its buttery notes complementing the dish." },
       { wine: "Pinot Noir", reason: "For a quiche with mushrooms or bacon, the wine's earthy notes and light body provide a great balance." },
