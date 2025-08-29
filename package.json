@@ -1,8 +1,8 @@
 {
-  "name": "cork-and-cuisine",
+  "name": "cork-cuisine",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://peterbuul.github.io/cork-and-cuisine",
+  "homepage": "https://peterbuul.github.io/cork-cuisine",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
