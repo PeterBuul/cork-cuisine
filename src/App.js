@@ -56,6 +56,48 @@ const wineData = [
       { food: "Roast Chicken", reason: "The wine's light body and bright acidity complement the white meat without overpowering it." },
       { food: "Gruyere Cheese", reason: "The nutty flavor of the cheese is enhanced by the wine's earthy and fruity notes." }
     ]
+  },
+  {
+    name: "Champagne",
+    type: "Sparkling",
+    profile: "High acidity, crisp, brioche, citrus, apple, mineral notes",
+    acid: "High",
+    body: "Light",
+    pairings: [
+      { food: "Sausages", reason: "The high acidity and effervescence of the wine cut through the fat and rich flavor of the sausage, refreshing the palate." },
+      { food: "Fried Chicken", reason: "The bubbles act like a scrubbing brush for the palate, perfectly balancing the oily, fried coating." },
+      { food: "Oysters", reason: "A classic pairing where the wine's crispness and acidity highlight the briny, fresh flavor of the oysters." },
+      { food: "Popcorn", reason: "The saltiness of the popcorn contrasts with the wine's effervescence and toasty notes." },
+      { food: "Smoked Salmon", reason: "The wine's light body and acidity complement the rich, smoky flavor of the salmon without overpowering it." }
+    ]
+  },
+  {
+    name: "Prosecco",
+    type: "Sparkling",
+    profile: "Fruity, crisp, floral, green apple, pear, melon",
+    acid: "High",
+    body: "Light",
+    pairings: [
+      { food: "Tacos", reason: "The wine's bright fruitiness and bubbles are a perfect match for the diverse flavors and light heat of tacos." },
+      { food: "Bruschetta", reason: "Its fresh, fruity notes complement the tomatoes and basil, while the effervescence cuts through the olive oil." },
+      { food: "Light Pasta Salad", reason: "The wine's lively character pairs well with the fresh vegetables and vinaigrette dressing." },
+      { food: "Sashimi", reason: "The wine’s clean and fruity profile works beautifully with the delicate flavor of raw fish." },
+      { food: "Spicy Asian Cuisine", reason: "The wine's slight sweetness and bubbles provide a refreshing contrast to the spice." }
+    ]
+  },
+  {
+    name: "Pinot Grigio",
+    type: "White",
+    profile: "Light-bodied, dry, crisp, green apple, lime, honeydew melon",
+    acid: "High",
+    body: "Light",
+    pairings: [
+      { food: "Quiche", reason: "The wine's high acidity cuts through the richness and creamy texture of the quiche filling." },
+      { food: "Chicken Caesar Salad", reason: "Its crisp, light character complements the chicken and offsets the creamy dressing." },
+      { food: "Grilled Shrimp", reason: "The wine's citrus notes and light body are a natural match for delicate seafood like shrimp." },
+      { food: "Sushi", reason: "A versatile wine that won't overpower the subtle flavors of sushi, while providing a refreshing palate cleanser." },
+      { food: "Light Fish Dishes", reason: "Its clean, dry finish and bright acidity pair well with flaky white fish prepared simply." }
+    ]
   }
 ];
 
@@ -102,6 +144,50 @@ const foodData = [
       { wine: "Sauvignon Blanc", reason: "The wine's crisp acidity cuts through the salmon's fat, refreshing the palate." },
       { wine: "Dry Rosé", reason: "Its versatility and balance of fruit and acidity make it a great option for fatty fish like salmon." },
       { wine: "Pinot Gris", reason: "A slightly richer white wine with a refreshing acidity that complements the fish without being too heavy." }
+    ]
+  },
+  {
+    name: "Sausages",
+    profile: "Savory, fatty, spiced",
+    pairings: [
+      { wine: "Champagne", reason: "The high acidity and bubbles cut through the fat of the sausage, cleansing the palate and enhancing its flavor." },
+      { wine: "Syrah", reason: "The spicy notes in the wine complement the savory and peppery flavors often found in sausages." },
+      { wine: "Zinfandel", reason: "Its bold fruit flavors and peppery notes stand up well to the richness and spice of sausages." },
+      { wine: "Pinot Noir", reason: "A lighter option that pairs well with pork or chicken sausages, as its acidity complements the fat without being too heavy." },
+      { wine: "Gamay", reason: "A light and fruity red wine that's excellent with savory sausages, especially those with herbs." }
+    ]
+  },
+  {
+    name: "Tacos",
+    profile: "Spicy, savory, diverse flavors",
+    pairings: [
+      { wine: "Prosecco", reason: "The wine's bright fruitiness and bubbles are a perfect match for the diverse flavors and light heat of tacos." },
+      { wine: "Sauvignon Blanc", reason: "Its crisp acidity and citrus notes cut through the richness and complement fresh salsas." },
+      { wine: "Riesling", reason: "The wine's high acidity and natural sweetness are a perfect match for the complex, savory, and sometimes spicy flavors of stir fry." },
+      { wine: "Rosé", reason: "A dry Rosé has enough body and acidity to pair well with a variety of taco fillings, from pork to fish." },
+      { wine: "Gamay", reason: "The light, fruity character of this wine pairs well with chicken or fish tacos without overwhelming them." }
+    ]
+  },
+  {
+    name: "Quiche",
+    profile: "Savory, creamy, rich, eggy",
+    pairings: [
+      { wine: "Pinot Grigio", reason: "The wine's high acidity cuts through the richness and creamy texture of the quiche filling, refreshing the palate." },
+      { wine: "Sauvignon Blanc", reason: "Its zesty acidity is a classic counterpoint to the richness of eggs and cream." },
+      { wine: "Chardonnay", reason: "A lightly oaked Chardonnay can match the creamy texture of the quiche, with its buttery notes complementing the dish." },
+      { wine: "Pinot Noir", reason: "For a quiche with mushrooms or bacon, the wine's earthy notes and light body provide a great balance." },
+      { wine: "Rosé", reason: "Its versatility and acidity make it a great choice, especially for a quiche with ham or cheese." }
+    ]
+  },
+  {
+    name: "Stir Fry",
+    profile: "Sweet, savory, spicy, umami",
+    pairings: [
+      { wine: "Riesling", reason: "The wine's high acidity and natural sweetness are a perfect match for the complex, savory, and sometimes spicy flavors of stir fry." },
+      { wine: "Sauvignon Blanc", reason: "Its green, herbal notes and crisp acidity are excellent with stir-fries that feature a lot of fresh vegetables." },
+      { wine: "Gewürztraminer", reason: "Aromatic and often slightly sweet, this wine can stand up to and complement the spiciest stir-fries." },
+      { wine: "Pinot Noir", reason: "For a stir-fry with duck or pork, the wine's light body and red fruit notes provide a harmonious pairing." },
+      { wine: "Prosecco", reason: "The bubbles and fruitiness of Prosecco are a refreshing contrast to the rich flavors and spices of a stir-fry." }
     ]
   }
 ];
@@ -178,7 +264,7 @@ const App = () => {
     <div className="min-h-screen bg-[#FBF6F0] p-8 font-garamond text-[#4B1E37]">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8">
         <div className="flex flex-col items-center mb-6">
-            <img src="https://i.imgur.com/rQ1p5w2.png" alt="Cork & Cuisine Logo" className="w-48 mb-4"/>
+            <img src="https://i.imgur.com/gX2qB0Z.png" alt="Cork & Cuisine Logo" className="w-48 mb-4"/>
             <h1 className="text-5xl font-extrabold text-[#4B1E37] text-center">
               Cork & Cuisine
             </h1>
