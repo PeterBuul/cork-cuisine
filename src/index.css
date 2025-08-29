@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Adding a custom font family for the app */
+.font-garamond {
+  font-family: 'Cormorant Garamond', serif;
+}
