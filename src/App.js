@@ -145,19 +145,16 @@ const App = () => {
 
   const handleSearch = () => {
     let matches = [];
-    let exactMatchFound = false;
     
     if (isWineSearch) {
       const wineMatch = wineData.find(wine => wine.name.toLowerCase() === query.toLowerCase());
       if (wineMatch) {
         matches = wineMatch.pairings.slice(0, 5);
-        exactMatchFound = true;
       }
     } else {
       const foodMatch = foodData.find(food => food.name.toLowerCase() === query.toLowerCase());
       if (foodMatch) {
         matches = foodMatch.pairings.slice(0, 5);
-        exactMatchFound = true;
       }
     }
     
