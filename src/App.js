@@ -73,7 +73,6 @@ const App = () => {
     <div className="min-h-screen bg-[#FBF6F0] p-8 font-garamond text-[#4B1E37]">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8">
         <div className="flex flex-col items-center mb-6">
-            <img src="https://i.ibb.co/6y4t4m1/Cork-and-Cuisine-Logo.png" alt="Cork & Cuisine Logo" className="w-48 mb-4"/>
             <h1 className="text-5xl font-extrabold text-[#4B1E37] text-center">
               Cork & Cuisine
             </h1>
